@@ -1,0 +1,171 @@
+* {
+  font-size: 14;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 0px;
+  background-color: #ffffff;
+}
+
+.navbar {
+  border: solid;
+  border-color: #fca311;
+  border-width: 5px 0px;
+}
+
+.separator {
+  height: 5px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.nav-list li {
+  flex: 1;
+}
+
+.nav-list li:first-child {
+  flex: 0.1;
+}
+
+.nav-list-down {
+  align-self: center;
+  padding-left: 5%;
+  height: 30px;
+  width: 90%;
+}
+
+.nav-list-down li {
+  flex: 1;
+}
+
+.cart-box {
+  background-color: #fca311;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.cart {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.navbar span {
+  position: relative;
+  top: 3px;
+}
+
+.nav-btn {
+  background-color: #14213d;
+  color: #e5e5e5;
+  font-weight: 700;
+  width: 90%;
+  height: 100%;
+}
+
+.nav-btn:hover {
+  background-color: #e5e5e5;
+  color: #fca311;
+  border-color: #fca311;
+  border-width: 5px;
+}
+
+.products {
+  height: 500px;
+  border: solid;
+  border-color: #fca311;
+  border-top-width: 40px;
+  border-bottom-width: 40px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.products-content {
+  width: 70%;
+  margin: 0px 15%;
+}
+
+.products-title {
+  background-color: #e5e5e5;
+  text-align: center;
+}
+
+.products-insides {
+  background-color: #e5e5e5;
+}
+
+.nav-list {
+  height: 50px;
+}
+
+.offers-list {
+  display: flex;
+  flex-direction: row;
+  padding-inline-end: 40px;
+  overflow-x: scroll;
+}
+
+.offers-list li:first-child {
+  margin-left: 140px;
+}
+
+.offers-list li {
+  margin-left: 40px;
+}
+
+.offer {
+  height: 250px;
+  border: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+}
+
+.offer-selects textarea {
+  text-align: center;
+  resize: none;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.crud-list {
+  padding: 0;
+}
+
+.crud-list li {
+  margin: 10px 20px;
+}
+
+.area-texto {
+  resize: none;
+}
+
+.crud-list li h4 {
+  text-align: center;
+}
+
+.pie-botones {
+  padding-left: 0;
+  padding-top: 10px;
+  height: 50px;
+  background-color: #fca311;
+}
+
+.pie-botones li {
+  height: 40px;
+  width: 140px;
+}
+
+.no-resize {
+  resize: none;
+}
