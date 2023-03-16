@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Citas from "./Citas";
+import Cita from "./Cita";
 
 function Navbar() {
   return (
@@ -43,19 +45,21 @@ function Navbar() {
         <nav>
           <ul className="nav-links">
             <li>
-              <a href="#" className="btn">
-                Inicio
-              </a>
+              <Link to="/">Inicio</Link>
             </li>
             <li>
-              <a href="#" className="btn">
-                Menu
-              </a>
+              <h4>
+                <Link to="/citas" className="link">
+                  Citas
+                </Link>
+              </h4>
             </li>
             <li>
-              <a href="loginvista.html" className="btn">
-                Login
-              </a>
+              <h4>
+                <Link to="/citas/editar" className="link">
+                  Editar Citas
+                </Link>
+              </h4>
             </li>
             <li>
               <a href="registrarvista.html" className="btn naranja">

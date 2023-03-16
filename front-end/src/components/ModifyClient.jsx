@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './main.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./main.css";
 
 function ModifyClient() {
   const [input, setInput] = useState({
-    id: '',
-    nombre: '',
-    pass: '',
-    email: '',
+    id: "",
+    nombre: "",
+    pass: "",
+    email: "",
   });
 
   function handleChange(event) {
@@ -29,63 +29,63 @@ function ModifyClient() {
       pass: input.pass,
       email: input.email,
     };
-    axios.patch('http://localhost:3001/modify', newClient);
+    axios.patch("http://localhost:3001/modify", newClient);
   }
 
   return (
-    <div className='container'>
-      <section className='crud'>
-        <ul className='crud-list'>
+    <div className="container">
+      <section className="crud">
+        <ul className="crud-list">
           <li>
             <h4>ID</h4>
             <textarea
               onChange={handleChange}
-              name='id'
+              name="id"
               value={input.id}
-              autoComplete='off'
-              className='form-control no-resize'
-              placeholder='Inserte un ID existente'
+              autoComplete="off"
+              className="form-control no-resize"
+              placeholder="Inserte un ID existente"
             ></textarea>
           </li>
           <li>
             <h4>Nombre</h4>
             <textarea
               onChange={handleChange}
-              name='nombre'
+              name="nombre"
               value={input.nombre}
-              autoComplete='off'
-              className='form-control no-resize'
-              placeholder='Nombre'
+              autoComplete="off"
+              className="form-control no-resize"
+              placeholder="Nombre"
             ></textarea>
           </li>
           <li>
             <h4>Contraseña</h4>
             <textarea
               onChange={handleChange}
-              name='pass'
+              name="pass"
               value={input.pass}
-              autoComplete='off'
-              className='form-control no-resize'
-              placeholder='Password'
+              autoComplete="off"
+              className="form-control no-resize"
+              placeholder="Password"
             ></textarea>
           </li>
           <li>
             <h4>Email</h4>
             <textarea
               onChange={handleChange}
-              name='email'
+              name="email"
               value={input.email}
-              autoComplete='off'
-              className='form-control no-resize'
-              placeholder='Email'
+              autoComplete="off"
+              className="form-control no-resize"
+              placeholder="Email"
             ></textarea>
           </li>
         </ul>
       </section>
-      <section className='pie-pagina'>
-        <ul className='pie-botones'>
+      <section className="pie-pagina">
+        <ul className="pie-botones">
           <li>
-            <button className='nav-btn aceptar' onClick={handleClick}>
+            <button className="nav-btn aceptar" onClick={handleClick}>
               Aceptar
             </button>
           </li>
