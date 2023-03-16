@@ -1,9 +1,214 @@
-.link {
-  color: white;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #ececec;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #999;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
+}
+
+.logo {
+  content: url(../../public/logo.png);
+  width: 85px;
+  height: 85px;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
+}
+
+.nav-links li:hover a {
+  color: #ff5722;
+}
+
+.nav-links li:last-child a {
+  color: #ececec;
+}
+
+.header .nav-links a {
+  font-size: 700;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.link:hover {
+.header .nav-links .active a {
+  font-size: 700;
+  font-weight: bold;
+  color: #fff;
+  padding: 9px 25px;
+  background: #ff5722;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.header .nav-links .active a:hover {
+  background: #ffbc0e;
+}
+
+.contenedor {
+  width: 100%;
+  padding: 15px;
+}
+
+.formulario {
+  background: #fff;
+  margin-top: 150px;
+  padding: 3px;
+}
+
+.formulario .subtext {
+  color: #999;
+}
+
+.formulario h1 {
+  text-align: center;
+  color: #1a2537;
+  font-size: 40px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="password"] {
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+.input-contenedor {
+  margin-bottom: 15px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.icon {
+  min-width: 50px;
+  text-align: center;
+  color: #999;
+}
+
+.button {
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff5722;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ff9a3c;
+}
+
+.formulario p {
+  text-align: center;
+}
+
+.precio h3 {
+  color: #ff5722;
+  font-size: 25px;
+}
+
+.precio h1 {
+  font-size: 70px;
+  display: inline-block;
+}
+
+.precio .sub {
+  color: #999;
+  display: inline-block;
+}
+
+.ticket-list {
+  color: #999;
+  font-size: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  padding: 3px;
+}
+
+input {
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #ececec;
+  border: none;
+}
+
+.link {
   text-decoration: none;
-  color: darkorange;
+  color: #222831;
+  font-weight: 600;
+}
+
+.link:hover {
+  color: #ff5722;
+}
+
+.naranja {
+  background: #ff5722;
+  color: #ececec;
+}
+
+.naranja:active {
+  color: #ececec;
+}
+
+.precioBg {
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 2%;
+}
+
+.react-datepicker__time-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-error {
+  visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  .formulario {
+    margin: auto;
+    width: 500px;
+    margin-top: 150px;
+    border-radius: 2%;
+  }
 }

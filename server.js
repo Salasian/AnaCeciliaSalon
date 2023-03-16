@@ -1,18 +1,21 @@
-const express =require('express')
+const express = require("express");
 const app = express();
-const cors = require('cors')
-const mongoose = require('mongoose')
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
-mongoose.connect("mongodb+srv://iansalas216755:salon@anaceciliasalon.ypjyi4f.mongodb.net/anacecilia",{
+mongoose.connect(
+  "mongodb+srv://iansalas216755:salon@anaceciliasalon.ypjyi4f.mongodb.net/anacecilia",
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    })
+  }
+);
 
-app.use("/",require("./routes/clientRoute"))
+app.use("/cita", require("./routes/citaRoute"));
 
-app.listen(3001,function(){
-    console.log('Running on 3001');
-})
+app.listen(3001, function () {
+  console.log("Running on 3001");
+});
