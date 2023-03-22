@@ -40,39 +40,41 @@ const Citas = () => {
   }, [citas]);
 
   return (
-    <div className="row">
+    <div className="row ">
       <div className="col-1"></div>
-      <div className="col-10 ">
-        <div className="row">
+      <div className="col-10 bg-light">
+        <div className="row border p-5">
           {citas.map((cita, index) => {
-            const { telefono, hora, fecha, precio, cliente, servicios, _id } =
-              cita;
-
+            const { hora, fecha, cliente, _id } = cita;
             return (
-              <div key={index} id={_id} className="col-4">
-                <p>Cliente:{cliente}</p>
-                <p>Telefono:{telefono}</p>
-                <p>Hora:{hora}</p>
-                <p>Fecha:{fecha.slice(0, 10)}</p>
-                <p>Precio:{precio}</p>
-                <p>Servicios:</p>
-                {servicios.map((serv, index) => {
-                  return <p key={index}>{`${serv.servicio} ${serv.precio}`}</p>;
-                })}
-                <button className="btn naranja" onClick={handleBorrar}>
-                  Borrar
-                </button>
-                <button
-                  className="btn naranja"
-                  onClick={() => handleEditar(_id)}
-                >
-                  Editar
-                </button>
+              <div
+                key={index}
+                id={_id}
+                className="col-2 border border-2 m-4 p-4"
+              >
+                <h3>{cliente}</h3>
+                <p>Fecha y Hora:</p>
+                <p>
+                  {fecha.slice(0, 10)} {hora}
+                </p>
+                <div className="d-flex">
+                  <button className="btn naranja m-1" onClick={handleBorrar}>
+                    Borrar
+                  </button>
+                  <button
+                    className="btn naranja m-1"
+                    onClick={() => handleEditar(_id)}
+                  >
+                    Editar
+                  </button>
+                </div>
               </div>
             );
           })}
+          <Link className="btn naranja" to="/citas/cita">
+            Añadir Cita
+          </Link>
         </div>
-        <Link to="/citas/cita">Añadir Cita</Link>
       </div>
       <div className="col-1"></div>
     </div>

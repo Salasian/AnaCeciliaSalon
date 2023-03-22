@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 function Cita() {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     telefono: "",
     hora: "",
@@ -41,6 +43,11 @@ function Cita() {
     input.fecha = startDate;
 
     const hora = `${input.fecha.getHours()}:${input.fecha.getMinutes()}`;
+    var fixHora = hora;
+    if (hora.length === 4) {
+      fixHora = fixHora + "0";
+    }
+
     //Dar el total por todos los servicios solicitados
     const precio = 0;
     var servicios = [];
@@ -54,7 +61,7 @@ function Cita() {
 
     const newCita = {
       telefono: input.telefono,
-      hora: hora,
+      hora: fixHora,
       fecha: input.fecha,
       precio: precio,
       cliente: "Ian Salas López",
@@ -62,6 +69,7 @@ function Cita() {
     };
     console.log(newCita);
     axios.post("http://localhost:3001/cita", newCita);
+    navigate("/citas");
   }
 
   return (
