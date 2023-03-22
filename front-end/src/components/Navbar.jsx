@@ -55,13 +55,6 @@ function Navbar() {
               </h4>
             </li>
             <li>
-              <h4>
-                <Link to="/citas/editar" className="link">
-                  Editar Citas
-                </Link>
-              </h4>
-            </li>
-            <li>
               <a href="registrarvista.html" className="btn naranja">
                 Sign in
               </a>
