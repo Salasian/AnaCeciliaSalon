@@ -1,39 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Citas from "./Citas";
-import Cita from "./Cita";
 
 function Navbar() {
   return (
-    /*<nav className='navbar bg-dark container'>
-      <h4>
-        <Link to='/' className='link'>
-          Home
-        </Link>
-      </h4>
-      <h4>
-        <Link to='/clients' className='link'>
-          Clients
-        </Link>
-      </h4>
-      <h4>
-        <Link to='/create' className='link'>
-          Create
-        </Link>
-      </h4>
-      <h4>
-        <Link to='/modify' className='link'>
-          Actualizar
-        </Link>
-      </h4>
-      <h4>
-        <Link to='/erase' className='link'>
-          Borrar
-        </Link>
-      </h4>
-    </nav>*/
-    <nav className="d-flex justify-content-between container mb-5">
+    <nav className="d-flex justify-content-between container mb-5 mt-3">
       <div className="d-flex">
         <div className="logo"></div>
         <div className="pt-4 mx-3">
@@ -45,19 +16,24 @@ function Navbar() {
         <nav>
           <ul className="nav-links">
             <li>
-              <Link to="/">Inicio</Link>
+              <Link to="/" className="link">
+                Inicio
+              </Link>
             </li>
             <li>
-              <h4>
-                <Link to="/citas" className="link">
-                  Citas
-                </Link>
-              </h4>
+              <Link to="/citas" className="link">
+                Citas
+              </Link>
             </li>
             <li>
-              <a href="registrarvista.html" className="btn naranja">
+              <Link to="/signin" className="btn naranja">
                 Sign in
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/login" className="btn naranja">
+                Log in
+              </Link>
             </li>
           </ul>
         </nav>

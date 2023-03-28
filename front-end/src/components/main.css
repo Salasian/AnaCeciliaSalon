@@ -18,12 +18,6 @@ body {
   height: 5px;
 }
 
-ul {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-}
-
 .nav-list li {
   flex: 1;
 }
@@ -139,6 +133,9 @@ ul {
 }
 
 .crud-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
   padding: 0;
 }
 
@@ -168,4 +165,44 @@ ul {
 
 .no-resize {
   resize: none;
+}
+
+.rojo {
+  color: red;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+textarea {
+  height: 10px;
+}
+
+/*Logos*/
+.instagram {
+  cursor: pointer;
+  content: url(../../public/instagram.png);
+  width: 85px;
+  height: 85px;
+}
+
+.facebook {
+  cursor: pointer;
+  content: url(../../public/facebook.png);
+  width: 85px;
+  height: 85px;
+}
+
+.whatsapp {
+  cursor: pointer;
+  content: url(../../public/whatsapp.png);
+  width: 85px;
+  height: 85px;
+}
+
+.toast {
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }

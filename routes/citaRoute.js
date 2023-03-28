@@ -30,7 +30,6 @@ router.route("/").get((req, res) => {
 
 router.route("/:id").delete(async (req, res) => {
   const id = req.params.id;
-  console.log(id);
   try {
     const borrado = await Cita.findByIdAndDelete(id);
     console.log(borrado);

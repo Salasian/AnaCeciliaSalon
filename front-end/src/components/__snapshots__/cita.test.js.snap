@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cita /> renders component 1`] = `
+<div>
+  <section
+    class="container grey"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col precioBg"
+      >
+        <div
+          class="precio"
+        >
+          <h3>
+            Precio
+          </h3>
+          <h1
+            name="precio"
+            value="0"
+          >
+            $0.00
+          </h1>
+          <p
+            class="sub"
+          >
+            Pesos
+          </p>
+          <p
+            style="color: rgb(153, 153, 153); font-size: 25px;"
+          >
+            precio estimado del servicio
+          </p>
+        </div>
+        <hr />
+        <div
+          class="ticket-list"
+        >
+          <p>
+            El servicio incluye lo siguiente
+          </p>
+          <p>
+            Ejemplo
+          </p>
+          <p>
+            Ejemplo
+          </p>
+          <p>
+            Ejemplo
+          </p>
+          <p>
+            Ejemplo
+          </p>
+          <p>
+            Ejemplo
+          </p>
+          <p>
+            Ejemplo
+          </p>
+        </div>
+        <hr />
+        <p>
+          Si tienes alguna duda con tu servicio no dudes en conactarte con nosotros via redes sociales
+        </p>
+      </div>
+      <div
+        class="col"
+      >
+        <h1>
+          Apartado de citas
+        </h1>
+        <div
+          class="row"
+        >
+          <div
+            class="col-8"
+          >
+            <h5>
+              Nombre del servicio
+            </h5>
+            <div
+              class="input-container"
+            >
+              <input
+                name="servicio1"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="input-container"
+            >
+              <input
+                name="servicio2"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="input-container"
+            >
+              <input
+                name="servicio3"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="col-4"
+          >
+            <h5>
+              Num de sevicios
+            </h5>
+            <div
+              class="input-container"
+            >
+              <input
+                max="5"
+                min="0"
+                name="precio1"
+                type="number"
+                value="0"
+              />
+            </div>
+            <div
+              class="input-container"
+            >
+              <input
+                max="5"
+                min="0"
+                name="precio2"
+                type="number"
+                value="0"
+              />
+            </div>
+            <div
+              class="input-container"
+            >
+              <input
+                max="5"
+                min="0"
+                name="precio3"
+                type="number"
+                value="0"
+              />
+            </div>
+          </div>
+        </div>
+        <p>
+          Si quieres mas de tres servicios llama al numero * 644 187 4008
+        </p>
+        <h3>
+          Número telefono
+        </h3>
+        <div
+          class="input-container"
+        >
+          <input
+            name="telefono"
+            type="text"
+            value=""
+          />
+        </div>
+        <div>
+          <h3>
+            Fecha
+          </h3>
+          <div
+            class="react-datepicker-wrapper"
+          >
+            <div
+              class="react-datepicker__input-container"
+            >
+              <span
+                aria-live="polite"
+                class="react-datepicker__aria-live"
+                role="alert"
+              />
+              <input
+                class=""
+                name="fecha"
+                type="text"
+                value="03/23/2023"
+              />
+            </div>
+          </div>
+        </div>
+        <p>
+          Una vez creada la cita podras cancelarla o modificarle siempre y cuando sea antes de su turno de cita
+        </p>
+        <input
+          class="button"
+          type="submit"
+          value="Confirmar Cita"
+        />
+        <p>
+          <a
+            class="link"
+            href="#"
+          >
+            Necesitas ayuda?
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;

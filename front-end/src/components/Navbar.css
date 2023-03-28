@@ -42,12 +42,12 @@ hr {
   transform: scale(1.1);
 }
 
-.nav-links li:hover a {
+.nav-links li link:hover a {
   color: #ff5722;
 }
 
-.nav-links li:last-child a {
-  color: #ececec;
+.nav-links li link {
+  color: #000000;
 }
 
 .header .nav-links a {
@@ -182,6 +182,10 @@ input {
 
 .naranja {
   background: #ff5722;
+  color: #ececec;
+}
+
+.naranja:hover {
   color: #ececec;
 }
 
