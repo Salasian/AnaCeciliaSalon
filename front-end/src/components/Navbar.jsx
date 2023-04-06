@@ -26,6 +26,11 @@ function Navbar() {
               </Link>
             </li>
             <li>
+              <Link to="/servicios" className="link">
+                Servicios
+              </Link>
+            </li>
+            <li>
               <Link to="/signin" className="btn naranja">
                 Sign in
               </Link>

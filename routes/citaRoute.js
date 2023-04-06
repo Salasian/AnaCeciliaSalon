@@ -1,4 +1,3 @@
-const { ObjectId } = require("bson");
 const express = require("express");
 const router = express.Router();
 const Cita = require("../models/citaModel");

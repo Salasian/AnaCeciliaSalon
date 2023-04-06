@@ -1,0 +1,68 @@
+const express = require("express");
+const router = express.Router();
+const Servicio = require("../models/servicioModel");
+
+router.route("/").get((req, res) => {
+  Servicio.find().then((foundServicios) => res.json(foundServicios));
+});
+
+router.route("/").post((req, res) => {
+  const cost = req.body.costo;
+  const descripcion = req.body.descripcion;
+  const nombre = req.body.nombre;
+
+  const newServicio = new Servicio({
+    cost,
+    descripcion,
+    nombre,
+  });
+  console.log(newServicio);
+  newServicio.save();
+});
+
+router.route("/:id").delete(async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const borrado = await Servicio.findOneAndDelete(id);
+    console.log(borrado);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.route("/:id").patch(async (req, res) => {
+  const id = req.params.id;
+  const costo = req.body.costo;
+  const descripcion = req.body.descripcion;
+  const nombre = req.body.nombre;
+
+  try {
+    let servicio = await Servicio.findByIdAndUpdate(
+      { _id: id },
+      {
+        $set: {
+          costo: costo,
+          descripcion: descripcion,
+          nombre: nombre,
+        },
+      }
+    );
+    console.log(servicio);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.route("/:id").get(async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    let servicio = await Servicio.find(id);
+    console.log(servicio);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+module.exports = router;

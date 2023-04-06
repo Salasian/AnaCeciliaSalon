@@ -5,7 +5,7 @@
 
 body {
   margin: 0px;
-  background-color: #ffffff;
+  background-color: #ececec;
 }
 
 .navbar {
@@ -177,6 +177,18 @@ body {
 
 textarea {
   height: 10px;
+}
+
+input {
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.input-container {
+  margin-bottom: 15px;
 }
 
 /*Logos*/
