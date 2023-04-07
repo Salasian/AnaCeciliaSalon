@@ -119,12 +119,13 @@ hr {
 
 .button {
   border: none;
-  width: 100%;
+  width: 50%;
+  margin: 1rem 0rem;
   color: white;
   font-size: 20px;
   font-weight: bold;
   background: #ff5722;
-  padding: 15px 20px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
 }

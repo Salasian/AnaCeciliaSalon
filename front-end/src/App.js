@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Cita from "./components/Cita";
 import Citas from "./components/Citas";
@@ -10,7 +10,7 @@ import Servicios from "./components/Servicios";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/citas" element={<Citas />} />
@@ -20,7 +20,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/login" element={<Log />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

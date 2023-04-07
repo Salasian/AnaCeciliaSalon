@@ -4,9 +4,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Navigate } from "react-router-dom";
 import "./main.css";
+import { useCitasContext } from "../citasContext";
 
 function Cita() {
   const [goToCitas, setGoToCitas] = useState(false);
+  const { fetchCitas } = useCitasContext();
   const [vacio, setVacio] = useState({
     estado: false,
     mensaje: "Hay campos vacíos",
@@ -84,8 +86,7 @@ function Cita() {
     window.open(anchor, "_blank");
   }
 
-  function handleClick(event) {
-    event.preventDefault();
+  async function handleClick() {
     input.fecha = startDate;
     if (isAtrasada(input.fecha)) {
     } else if (!isVacios()) {
@@ -113,7 +114,13 @@ function Cita() {
         cliente: input.cliente,
         servicios: servicios,
       };
-      axios.post("http://localhost:3001/cita", newCita);
+      try {
+        await axios.post("http://localhost:3001/cita", newCita);
+        await fetchCitas();
+      } catch (error) {
+        console.log(error);
+      }
+      console.log("Agregado");
       setGoToCitas(true);
     }
   }

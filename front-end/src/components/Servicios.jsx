@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./servicios.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Servicios = () => {
+  const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const [servicios, setServicios] = useState([
+    {
+      _id: "",
+      costo: 0,
+      descripcion: "",
+      nombre: "",
+    },
+  ]);
+
+  const toggleShow = () => setShow(!show);
+
+  function handleEditar(id) {
+    let link = `/servicios/editar`;
+    navigate(link, { state: { id: id } });
+  }
+
+  async function handleBorrar(e) {
+    e.preventDefault();
+    toggleShow();
+    let id = e.target.parentElement.parentElement.id;
+    await axios.delete(`http://localhost:3001/cita/${id}`);
+  }
+
+  useEffect(() => {
+    fetch("http://localhost:3001/cita")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((jsonRes) => setServicios(jsonRes));
+  }, [servicios]);
+
   return (
     <div className="row">
       <div className="col-1"></div>

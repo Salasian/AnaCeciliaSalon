@@ -31,7 +31,7 @@ router.route("/:id").delete(async (req, res) => {
   const id = req.params.id;
   try {
     const borrado = await Cita.findByIdAndDelete(id);
-    console.log(borrado);
+    res.json(borrado);
   } catch (error) {
     console.log(error);
   }
