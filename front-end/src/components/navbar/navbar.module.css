@@ -24,39 +24,40 @@ hr {
 }
 
 .logo {
-  content: url(../../public/logo.png);
+  content: url(../../../public/logo.png);
   width: 85px;
   height: 85px;
 }
 
-.nav-links {
+.navLinks {
   list-style: none;
+  margin: 0rem;
 }
 
-.nav-links li {
+.navLinks li {
   display: inline-block;
   padding: 0 20px;
 }
 
-.nav-links li:hover {
+.navLinks li:hover {
   transform: scale(1.1);
 }
 
-.nav-links li link:hover a {
+.navLinks li link:hover a {
   color: #ff5722;
 }
 
-.nav-links li link {
+.navLinks li link {
   color: #000000;
 }
 
-.header .nav-links a {
+.header .navLinks a {
   font-size: 700;
   font-weight: bold;
   text-decoration: none;
 }
 
-.header .nav-links .active a {
+.header .navLinks .active a {
   font-size: 700;
   font-weight: bold;
   color: #fff;
@@ -68,7 +69,7 @@ hr {
   transition: all 0.3s;
 }
 
-.header .nav-links .active a:hover {
+.header .navLinks .active a:hover {
   background: #ffbc0e;
 }
 
@@ -115,44 +116,12 @@ hr {
   color: #999;
 }
 
-.button {
-  border: none;
-  width: 100%;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  background: #ff5722;
-  padding: 15px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .button:hover {
   background: #ff9a3c;
 }
 
 .formulario p {
   text-align: center;
-}
-
-.precio h3 {
-  color: #ff5722;
-  font-size: 25px;
-}
-
-.precio h1 {
-  font-size: 70px;
-  display: inline-block;
-}
-
-.precio .sub {
-  color: #999;
-  display: inline-block;
-}
-
-.ticket-list {
-  color: #999;
-  font-size: 20px;
 }
 
 .grid-container {
@@ -183,20 +152,16 @@ input {
 .naranja {
   background: #ff5722;
   color: #ececec;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
 .naranja:hover {
-  color: #ececec;
+  color: #000000;
 }
 
 .naranja:active {
   color: #ececec;
-}
-
-.precioBg {
-  padding: 20px;
-  background-color: #f3f3f3;
-  border-radius: 2%;
 }
 
 .react-datepicker__time-list {

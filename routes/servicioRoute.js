@@ -2,17 +2,19 @@ const express = require("express");
 const router = express.Router();
 const Servicio = require("../models/servicioModel");
 
-router.route("/").get((req, res) => {
-  Servicio.find().then((foundServicios) => res.json(foundServicios));
+router.route("/").get(async (req, res) => {
+  await Servicio.find().then((foundServicios) => {
+    res.json(foundServicios);
+  });
 });
 
 router.route("/").post((req, res) => {
-  const cost = req.body.costo;
+  const costo = req.body.costo;
   const descripcion = req.body.descripcion;
   const nombre = req.body.nombre;
 
   const newServicio = new Servicio({
-    cost,
+    costo,
     descripcion,
     nombre,
   });
@@ -22,10 +24,9 @@ router.route("/").post((req, res) => {
 
 router.route("/:id").delete(async (req, res) => {
   const id = req.params.id;
-
   try {
-    const borrado = await Servicio.findOneAndDelete(id);
-    console.log(borrado);
+    const borrado = await Servicio.findByIdAndDelete(id);
+    res.json(borrado);
   } catch (error) {
     console.log(error);
   }

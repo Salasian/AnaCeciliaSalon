@@ -1,0 +1,35 @@
+.crud-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.crudList li {
+  margin: 10px 20px;
+}
+
+.crud-list li h4 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.naranja {
+  background: #ff5722;
+  color: #ececec;
+}
+
+input {
+  height: 2.5rem;
+}
+
+textarea {
+  height: 2.5rem;
+}

@@ -1,0 +1,99 @@
+* {
+  font-size: 14;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #ececec;
+}
+
+.precio h3 {
+  color: #ff5722;
+  font-size: 25px;
+}
+
+.precio h1 {
+  font-size: 70px;
+  display: inline-block;
+}
+
+.precio .sub {
+  color: #999;
+  display: inline-block;
+}
+
+.precioBg {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 2%;
+}
+
+.ticketList {
+  color: #999;
+  font-size: 20px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.button {
+  border: none;
+  width: 50%;
+  margin: 1rem 0rem;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff5722;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ffffff00;
+  color: #ff5722;
+}
+
+.rojo {
+  color: red;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+input {
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.inputContainer {
+  margin-bottom: 15px;
+}
+
+/*Logos*/
+.instagram {
+  cursor: pointer;
+  content: url(../../../public/instagram.png);
+  width: 85px;
+  height: 85px;
+}
+
+.facebook {
+  cursor: pointer;
+  content: url(../../../public/facebook.png);
+  width: 85px;
+  height: 85px;
+}
+
+.whatsapp {
+  cursor: pointer;
+  content: url(../../../public/whatsapp.png);
+  width: 85px;
+  height: 85px;
+}

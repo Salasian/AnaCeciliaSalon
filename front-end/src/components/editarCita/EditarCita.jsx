@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { useLocation } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import style from "./editar.module.css";
 
 const EditarCita = () => {
   const location = useLocation();
@@ -129,8 +130,8 @@ const EditarCita = () => {
 
   return (
     <div className="container">
-      <section className="crud">
-        <ul className="crud-list">
+      <section className={style.crud}>
+        <ul className={` d-flex justify-content-center ${style.crudList}`}>
           {vacio.estado === true ? (
             <i className="rojo"> {vacio.mensaje}</i>
           ) : (
@@ -144,7 +145,7 @@ const EditarCita = () => {
               name="cliente"
               value={input.cliente}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Inserte un Cliente existente"
             />
           </li>
@@ -156,7 +157,7 @@ const EditarCita = () => {
               name="telefono"
               value={input.telefono}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Telefono"
             />
           </li>
@@ -187,12 +188,12 @@ const EditarCita = () => {
               name="precio"
               value={input.precio}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Precio"
             />
           </li>
         </ul>
-        <ul className="crud-list">
+        <ul className={` d-flex justify-content-center ${style.crudList}`}>
           <li>
             <h4>Servicio 1</h4>
             <textarea
@@ -200,7 +201,7 @@ const EditarCita = () => {
               name="servicio1"
               value={input.servicio1}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Servicio 1"
             />
             <textarea
@@ -209,7 +210,7 @@ const EditarCita = () => {
               name="precio1"
               value={input.precio1}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Precio 1"
             />
           </li>
@@ -221,7 +222,7 @@ const EditarCita = () => {
               name="servicio2"
               value={input.servicio2}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Servicio 2"
             ></textarea>
             <textarea
@@ -230,7 +231,7 @@ const EditarCita = () => {
               name="precio1"
               value={input.precio2}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Precio 2"
             ></textarea>
           </li>
@@ -242,7 +243,7 @@ const EditarCita = () => {
               name="servicio3"
               value={input.servicio3}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Servicio 3"
             ></textarea>
             <textarea
@@ -251,16 +252,16 @@ const EditarCita = () => {
               name="precio1"
               value={input.precio3}
               autoComplete="off"
-              className="form-control no-resize"
+              className="form-control"
               placeholder="Precio 3"
             ></textarea>
           </li>
         </ul>
       </section>
       <section>
-        <ul className="crud-list">
+        <ul className={`text-center ${style.crudList}`}>
           <li>
-            <button className="btn naranja" onClick={handleClick}>
+            <button className={`btn ${style.naranja}`} onClick={handleClick}>
               Aceptar
             </button>
           </li>

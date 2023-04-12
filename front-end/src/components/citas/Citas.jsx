@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Toast from "react-bootstrap/Toast";
-import { useCitasContext } from "../citasContext";
+import { useCitasContext } from "../../citasContext";
+import style from "./citas.module.css";
 
 const Citas = () => {
   const navigate = useNavigate();
@@ -37,22 +38,22 @@ const Citas = () => {
               <div
                 key={index}
                 id={_id}
-                className="col-2 flex-fill border border-2 p-4 m-2"
+                className="col-2 flex-fill text-center border border-2 p-4 m-2"
               >
                 <h3>{cliente}</h3>
                 <p>Fecha y Hora:</p>
                 <p>
                   {fecha.slice(0, 10)} {hora}
                 </p>
-                <div className="d-flex">
+                <div className="d-flex justify-content-center">
                   <button
-                    className="btn naranja m-1"
+                    className={`btn m-1 ${style.naranja}`}
                     onClick={() => handleBorrar(_id)}
                   >
                     Borrar
                   </button>
                   <button
-                    className="btn naranja m-1"
+                    className={`btn m-1 ${style.naranja}`}
                     onClick={() => handleEditar(_id)}
                   >
                     Editar
@@ -61,7 +62,7 @@ const Citas = () => {
               </div>
             );
           })}
-          <Link className="btn naranja mt-5" to="/citas/cita">
+          <Link className={`btn m-1 ${style.naranja} mt-5`} to="/citas/cita">
             Añadir Cita
           </Link>
         </div>

@@ -3,8 +3,8 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Navigate } from "react-router-dom";
-import "./main.css";
-import { useCitasContext } from "../citasContext";
+import { useCitasContext } from "../../citasContext";
+import style from "./cita.module.css";
 
 function Cita() {
   const [goToCitas, setGoToCitas] = useState(false);
@@ -126,21 +126,21 @@ function Cita() {
   }
 
   return (
-    <section className="container grey">
+    <section className={`container ${style.grey}`}>
       <div className="row">
-        <div className="col precioBg">
-          <div className="precio">
+        <div className={`col ${style.precioBg}`}>
+          <div className={style.precio}>
             <h3>Precio</h3>
             <h1 onChange={handleChange} name="precio" value={input.precio}>
               $0.00
             </h1>
-            <p className="sub">Pesos</p>
+            <p className={style.sub}>Pesos</p>
             <p style={{ color: "#999", fontSize: 25 }}>
               precio estimado del servicio
             </p>
           </div>
           <hr />
-          <div className="ticket-list">
+          <div className={style.ticketList}>
             <p>El servicio incluye lo siguiente</p>
             <p>Ejemplo</p>
             <p>Ejemplo</p>
@@ -157,14 +157,14 @@ function Cita() {
           <div className="d-flex">
             <img
               alt="insta"
-              className="instagram m-2"
+              className={`m-2 ${style.instagram}`}
               onClick={() =>
                 handleAnchor("https://www.instagram.com/analopezprince/")
               }
             ></img>
             <img
               alt="whatsapp"
-              className="whatsapp m-2"
+              className={`m-2 ${style.whatsapp}`}
               onClick={() =>
                 handleAnchor(
                   "https://api.whatsapp.com/send?phone=%2B526441150556&data=AWA88bt7V0mdjxZNRmka7Ov589e_FPj600jDzrkpOBTuIS1rKF7MkT1u3VgvbR0pVswcb1cbUX6WOdaZw-g5xfGRPrfUvpekYjyNJG3caTUiCeQqFumGzqtnk9OzAGjYTTpuJYZNSS-hrr62OetpxiNtFnc7rH5n4Z-0GLLuQ-POuUR5m3_frIQ2Uxopz6T53w_PqcOCIazJWo5uEYEyE_R0At3kKYfuoGfK1Fsa9KPSrW8PIUg-bmZBo3X_DUxl640KeFH_IYna3FtAuLXLxj01M8W4b1kdPIXY5tXQkrwtDXNndf4&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwAR0OhoncQNrxne6aEqvCfg7kiDubMJIlkEBEiO07zBgpUuarg6qA8zuYJ0M"
@@ -173,7 +173,7 @@ function Cita() {
             ></img>
             <img
               alt="facebook"
-              className="facebook m-2"
+              className={`m-2 ${style.facebook}`}
               onClick={() =>
                 handleAnchor(
                   "https://www.facebook.com/profile.php?id=100047959665948"
@@ -189,12 +189,12 @@ function Cita() {
               <h5>
                 Nombre del servicio
                 {vacio.estado === true ? (
-                  <i className="rojo"> {vacio.mensaje}</i>
+                  <p className={style.rojo}> {vacio.mensaje}</p>
                 ) : (
                   <i></i>
                 )}
               </h5>
-              <div className="input-container">
+              <div className={style.inputContainer}>
                 <input
                   type="text"
                   name="servicio1"
@@ -212,7 +212,7 @@ function Cita() {
                   className="border"
                 />
               </div>
-              <div className="input-container">
+              <div className={style.inputContainer}>
                 <input
                   type="text"
                   name="servicio3"
@@ -224,7 +224,7 @@ function Cita() {
             </div>
             <div className="col-4">
               <h5>Num de sevicios</h5>
-              <div className="input-container">
+              <div className={style.inputContainer}>
                 <input
                   type="number"
                   min="0"
@@ -235,7 +235,7 @@ function Cita() {
                   className="border"
                 />
               </div>
-              <div className="input-container">
+              <div className={style.inputContainer}>
                 <input
                   type="number"
                   min="0"
@@ -246,7 +246,7 @@ function Cita() {
                   className="border"
                 />
               </div>
-              <div className="input-container">
+              <div className={style.inputContainer}>
                 <input
                   type="number"
                   min="0"
@@ -261,7 +261,7 @@ function Cita() {
           </div>
           <p>Si quieres mas de tres servicios llama al numero * 644 187 4008</p>
           <h3>Número telefono</h3>
-          <div className="input-container">
+          <div className={style.inputContainer}>
             <input
               type="number"
               name="telefono"
@@ -273,7 +273,7 @@ function Cita() {
           <div>
             <h3>Fecha</h3>
             {fechaError.estado === true ? (
-              <i className="rojo"> {fechaError.mensaje}</i>
+              <i className={style.rojo}> {fechaError.mensaje}</i>
             ) : (
               <i></i>
             )}
@@ -297,7 +297,7 @@ function Cita() {
             onChange={handleChange}
             type="submit"
             value="Confirmar Cita"
-            className="button"
+            className={style.button}
             onClick={handleClick}
           />
           <p>

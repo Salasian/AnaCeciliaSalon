@@ -7,10 +7,14 @@ h1 {
   text-align: center;
 }
 
+.label {
+  margin-top: 2rem;
+}
+
 .services {
   background: #fff;
-  margin-bottom: 20px;
   padding: 10px;
+  border: solid 5px #ececec;
 }
 
 .container {
@@ -22,15 +26,15 @@ h1 {
   border: none;
   width: fit-content;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   background: #ff5722;
-  padding: 15px 20px;
+  padding: 5px 2px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.button-crear {
+.btnCrear {
   border: none;
   width: fit-content;
   color: white;
@@ -46,29 +50,12 @@ h1 {
   background: #ff9a3c;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-}
-
-.col-1 button {
-  margin-top: 15px;
-  margin-left: 200px;
-  margin-right: 100px;
-}
-
-.row input[type="text"] {
-  font-size: 20px;
-  padding: 10px;
-  border: none;
-}
-
 .description {
+  inline-size: 620px;
   height: 150px;
+  word-break: break-all;
 }
 
-.btn-services {
+.btnServices {
   margin: 0px 10px 0px 10px;
 }

@@ -37,13 +37,6 @@ body {
   flex: 1;
 }
 
-.cart-box {
-  background-color: #fca311;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
 .cart {
   position: relative;
   top: 5px;
@@ -132,23 +125,8 @@ body {
   height: 200px;
 }
 
-.crud-list {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-}
-
-.crud-list li {
-  margin: 10px 20px;
-}
-
 .area-texto {
   resize: none;
-}
-
-.crud-list li h4 {
-  text-align: center;
 }
 
 .pie-botones {
