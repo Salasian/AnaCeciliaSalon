@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Navigate } from "react-router-dom";
-import { useCitasContext } from "../../citasContext";
+import { useCitasContext } from "../../context/citasContext";
 import style from "./cita.module.css";
 
 function Cita() {
   const [goToCitas, setGoToCitas] = useState(false);
-  const { fetchCitas } = useCitasContext();
+  const { agregarCita } = useCitasContext();
   const [vacio, setVacio] = useState({
     estado: false,
     mensaje: "Hay campos vacíos",
@@ -114,12 +113,7 @@ function Cita() {
         cliente: input.cliente,
         servicios: servicios,
       };
-      try {
-        await axios.post("http://localhost:3001/cita", newCita);
-        await fetchCitas();
-      } catch (error) {
-        console.log(error);
-      }
+      agregarCita(newCita);
       console.log("Agregado");
       setGoToCitas(true);
     }
@@ -203,7 +197,7 @@ function Cita() {
                   className="border"
                 />
               </div>
-              <div className="input-container">
+              <div className={style.inputContainer}>
                 <input
                   type="text"
                   name="servicio2"
@@ -301,7 +295,7 @@ function Cita() {
             onClick={handleClick}
           />
           <p>
-            <a className="link" href="#">
+            <a className={style.link} href="#">
               Necesitas ayuda?
             </a>
           </p>

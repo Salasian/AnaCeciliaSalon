@@ -15,14 +15,6 @@ hr {
   border-top: 1px solid #999;
 }
 
-.header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 85px;
-  padding: 5px 10%;
-}
-
 .logo {
   content: url(../../../public/logo.png);
   width: 85px;
@@ -32,11 +24,17 @@ hr {
 .navLinks {
   list-style: none;
   margin: 0rem;
+  pointer-events: none;
+  border: none;
 }
 
 .navLinks li {
   display: inline-block;
   padding: 0 20px;
+}
+
+.navLinks li a {
+  pointer-events: all;
 }
 
 .navLinks li:hover {
@@ -51,17 +49,57 @@ hr {
   color: #000000;
 }
 
-.header .navLinks a {
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
+}
+
+.header .logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.header .logo img {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s;
+}
+
+.header .logo img:hover {
+  transform: scale(1.2);
+}
+
+.header .nav-links {
+  list-style: none;
+}
+
+.header .nav-links li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+  transform: scale(1.1);
+}
+
+.header .nav-links a {
   font-size: 700;
   font-weight: bold;
   text-decoration: none;
 }
 
-.header .navLinks .active a {
+.header .nav-links a:hover {
+  color: #ff5722;
+}
+
+.header .nav-links .active a {
   font-size: 700;
   font-weight: bold;
   color: #fff;
-  padding: 9px 25px;
+  padding: px 25px;
   background: #ff5722;
   border: none;
   border-radius: 50px;
@@ -69,7 +107,7 @@ hr {
   transition: all 0.3s;
 }
 
-.header .navLinks .active a:hover {
+.header .nav-links .active a:hover {
   background: #ffbc0e;
 }
 
@@ -131,14 +169,6 @@ hr {
   padding: 3px;
 }
 
-input {
-  font-size: 20px;
-  width: 100%;
-  padding: 10px;
-  background-color: #ececec;
-  border: none;
-}
-
 .link {
   text-decoration: none;
   color: #222831;
@@ -162,15 +192,6 @@ input {
 
 .naranja:active {
   color: #ececec;
-}
-
-.react-datepicker__time-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.text-error {
-  visibility: hidden;
 }
 
 @media (min-width: 768px) {

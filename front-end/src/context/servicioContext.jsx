@@ -6,7 +6,7 @@ const ServiciosContext = createContext();
 export const useSevicioContext = () => useContext(ServiciosContext);
 
 const AppContext = ({ children }) => {
-  const [refresh, setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(true);
   const [servicios, setServicios] = useState([
     {
       costo: 0,
@@ -23,12 +23,10 @@ const AppContext = ({ children }) => {
 
   const agregarServicio = async (newServicio) => {
     await axios.post(`http://localhost:3001/servicio`, newServicio);
-    await fetchServicios();
   };
 
   const borrarServicio = async (id) => {
     await axios.delete(`http://localhost:3001/servicio/${id}`);
-    await fetchServicios();
   };
 
   const editarServicio = async (id, editedServicio) => {};

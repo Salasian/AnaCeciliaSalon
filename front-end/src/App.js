@@ -4,10 +4,11 @@ import Navbar from "./components/navbar/Navbar";
 import Cita from "./components/cita/Cita";
 import Citas from "./components/citas/Citas";
 import EditarCita from "./components/editarCita/EditarCita";
-import Log from "./components/Log";
-import Signin from "./components/Signin";
+import Log from "./components/log&Sign/Log";
+import Signin from "./components/log&Sign/Signin";
 import Servicios from "./components/servicios/Servicios";
-import AppContext from "./servicioContext";
+import { default as ServicioContext } from "./context/servicioContext";
+import { default as ClienteContext } from "./context/clienteContext";
 
 function App() {
   return (
@@ -21,14 +22,28 @@ function App() {
         <Route
           path="/servicios"
           element={
-            <AppContext>
+            <ServicioContext>
               <Servicios />
-            </AppContext>
+            </ServicioContext>
           }
         />
 
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/login" element={<Log />} />
+        <Route
+          path="/signin"
+          element={
+            <ClienteContext>
+              <Signin />
+            </ClienteContext>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <ClienteContext>
+              <Log />
+            </ClienteContext>
+          }
+        />
       </Routes>
     </Router>
   );

@@ -9,9 +9,7 @@ router.route("/").get(async (req, res) => {
 });
 
 router.route("/").post((req, res) => {
-  const costo = req.body.costo;
-  const descripcion = req.body.descripcion;
-  const nombre = req.body.nombre;
+  const { costo, descripcion, nombre } = req.body;
 
   const newServicio = new Servicio({
     costo,
@@ -34,9 +32,7 @@ router.route("/:id").delete(async (req, res) => {
 
 router.route("/:id").patch(async (req, res) => {
   const id = req.params.id;
-  const costo = req.body.costo;
-  const descripcion = req.body.descripcion;
-  const nombre = req.body.nombre;
+  const { costo, descripcion, nombre } = req.body;
 
   try {
     let servicio = await Servicio.findByIdAndUpdate(

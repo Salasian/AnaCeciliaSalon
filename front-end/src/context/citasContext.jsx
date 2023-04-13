@@ -23,8 +23,17 @@ const AppContext = ({ children }) => {
     setCitas(citasTemp.data);
   };
 
+  const agregarCita = async (newCita) => {
+    try {
+      await axios.post("http://localhost:3001/cita", newCita);
+      await fetchCitas();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <CitasContext.Provider value={{ citas, fetchCitas }}>
+    <CitasContext.Provider value={{ citas, fetchCitas, agregarCita }}>
       {children}
     </CitasContext.Provider>
   );

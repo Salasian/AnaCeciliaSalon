@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Toast from "react-bootstrap/Toast";
-import { useCitasContext } from "../../citasContext";
+import { useCitasContext } from "../../context/citasContext";
 import style from "./citas.module.css";
 
 const Citas = () => {

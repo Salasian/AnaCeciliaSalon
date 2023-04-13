@@ -15,68 +15,6 @@ hr {
   border-top: 1px solid #999;
 }
 
-.header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 85px;
-  padding: 5px 10%;
-}
-
-.header .logo {
-  cursor: pointer;
-  margin-right: auto;
-}
-
-.header .logo img {
-  height: 70px;
-  width: auto;
-  transition: all 0.3s;
-}
-
-.header .logo img:hover {
-  transform: scale(1.2);
-}
-
-.header .nav-links {
-  list-style: none;
-}
-
-.header .nav-links li {
-  display: inline-block;
-  padding: 0 20px;
-}
-
-.header .nav-links li:hover {
-  transform: scale(1.1);
-}
-
-.header .nav-links a {
-  font-size: 700;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.header .nav-links a:hover {
-  color: #ff5722;
-}
-
-.header .nav-links .active a {
-  font-size: 700;
-  font-weight: bold;
-  color: #fff;
-  padding: 9px 25px;
-  background: #ff5722;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.header .nav-links .active a:hover {
-  background: #ffbc0e;
-}
-
 .contenedor {
   width: 100%;
   padding: 15px;
@@ -105,7 +43,7 @@ hr {
   border: none;
 }
 
-.input-contenedor {
+.inputContenedor {
   margin-bottom: 15px;
   border: 1px solid #aaa;
   border-radius: 10px;
@@ -121,6 +59,7 @@ hr {
   border: none;
   width: 50%;
   margin: 1rem 0rem;
+  height: auto;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -146,6 +85,15 @@ hr {
 
 .link:hover {
   color: #ff5722;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.red {
+  color: red;
+  font-size: 1rem;
 }
 
 @media (min-width: 768px) {

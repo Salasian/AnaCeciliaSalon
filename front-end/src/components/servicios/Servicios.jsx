@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./servicios.module.css";
 import { useNavigate } from "react-router-dom";
-import { useSevicioContext } from "../../servicioContext";
+import { useSevicioContext } from "../../context/servicioContext";
 
 const Servicios = () => {
   const {
@@ -43,11 +43,10 @@ const Servicios = () => {
   }
 
   useEffect(() => {
-    fetchServicios();
-  }, []);
-
-  useEffect(() => {
-    setRefresh(false);
+    if (refresh) {
+      fetchServicios();
+      setRefresh(false);
+    }
   }, [refresh]);
 
   return (
@@ -56,7 +55,7 @@ const Servicios = () => {
       <div className="col-4">
         <h2>Agregar nuevo servicio</h2>
         <h3 className={style.label}>Nombre del servicio</h3>
-        <div className="input-container">
+        <div className={style.inputContainer}>
           <input
             type="text"
             placeholder="Nombre"
@@ -70,18 +69,19 @@ const Servicios = () => {
           type="text"
           placeholder="Descripcion"
           value={input.descripcion}
-          className={`input-container ${style.description}`}
+          className={`${style.inputContainer} ${style.description}`}
           onChange={(e) => setInput({ ...input, descripcion: e.target.value })}
         />
         <h3 className={style.label}>Costo</h3>
         <input
           type="text"
           placeholder="Costo"
+          className={style.inputContainer}
           value={input.costo}
           onChange={(e) => setInput({ ...input, costo: e.target.value })}
         />
         <div className="d-flex justify-content-center pt-5">
-          <button className={style.btnCrear} onClick={handleAgregar}>
+          <button className={style.btnCrear} onClick={() => handleAgregar()}>
             Crear servicio
           </button>
         </div>

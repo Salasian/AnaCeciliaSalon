@@ -18,6 +18,8 @@ app.use("/cita", require("./routes/citaRoute"));
 
 app.use("/servicio", require("./routes/servicioRoute"));
 
+app.use("/cliente", require("./routes/clienteRoute"));
+
 app.listen(3001, function () {
   console.log("Running on 3001");
 });

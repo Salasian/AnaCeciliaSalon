@@ -3,12 +3,7 @@ const router = express.Router();
 const Cita = require("../models/citaModel");
 
 router.route("/").post((req, res) => {
-  const hora = req.body.hora;
-  const precio = req.body.precio;
-  const fecha = req.body.fecha;
-  const servicios = req.body.servicios;
-  const cliente = req.body.cliente;
-  const telefono = req.body.telefono;
+  const { hora, precio, fecha, servicios, cliente, telefono } = req.body;
   const newCita = new Cita({
     hora,
     precio,
@@ -39,12 +34,7 @@ router.route("/:id").delete(async (req, res) => {
 
 router.route("/:id").patch(async (req, res) => {
   const id = req.params.id;
-  const hora = req.body.nombre;
-  const precio = req.body.pass;
-  const fecha = req.body.email;
-  const servicio = req.body.servicio;
-  const cliente = req.body.cliente;
-  const telefono = req.body.telefono;
+  const { hora, precio, fecha, servicio, cliente, telefono } = req.body;
 
   try {
     let cita = await Cita.findOneAndUpdate(

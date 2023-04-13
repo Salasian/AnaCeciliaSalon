@@ -12,7 +12,7 @@ function Navbar() {
         </div>
       </div>
       <div className="float-end"></div>
-      <header className="header">
+      <header className={`header ${style.header}`}>
         <nav>
           <ul className={`btn ${style.navLinks}`}>
             <li>
