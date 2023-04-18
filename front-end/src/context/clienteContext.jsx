@@ -32,8 +32,24 @@ const AppContext = ({ children }) => {
     }
   };
 
+  const encuentraCliente = async (mail, password) => {
+    try {
+      const encontrado = await axios.get(
+        `http://localhost:3001/cliente/loger`,
+        { params: { mail: mail, password: password } }
+      );
+      if (encontrado.status === 200) return true;
+      return false;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+
   return (
-    <ClientesContext.Provider value={{ clientes, agregarClientes }}>
+    <ClientesContext.Provider
+      value={{ clientes, agregarClientes, encuentraCliente }}
+    >
       {children}
     </ClientesContext.Provider>
   );

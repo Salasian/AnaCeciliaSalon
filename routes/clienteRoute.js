@@ -6,11 +6,30 @@ router.route("/").get((req, res) => {
   Cliente.find().then((foundedClientes) => res.json(foundedClientes));
 });
 
-router.route("/:id").get(async (req, res) => {
+/*router.route("/:id").get(async (req, res) => {
   const id = req.params.id;
   try {
     let cliente = await Cliente.findById(id);
     res.json(cliente);
+  } catch (error) {
+    console.log(error);
+  }
+});*/
+
+router.route("/loger").get(async (req, res) => {
+  const mail = req.query.mail;
+  const password = req.query.password;
+  try {
+    let cliente = await Cliente.find({
+      mail: mail,
+      password: password,
+    });
+    console.log(cliente);
+    if (cliente.length > 0) {
+      res.status(200).json({ message: "Admitido", status: 200 });
+    } else {
+      res.status(404).send("Not found");
+    }
   } catch (error) {
     console.log(error);
   }

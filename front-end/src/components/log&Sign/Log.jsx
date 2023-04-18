@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 import style from "./loginandSignin.module.css";
 import { Navigate } from "react-router-dom";
+import { useClienteContext } from "../../context/clienteContext";
 
 const Log = () => {
+  const { encuentraCliente } = useClienteContext();
+  const [goToCitas, setGoToCitas] = useState(false);
+  const [error, setError] = useState({ incognita: false, mensaje: "" });
   const [input, setInput] = useState({
     mail: "",
     password: "",
   });
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (camposVacios()) {
-      //verificar credenciales
+      setError({ incognita: true, mensaje: "Hay campos vacíos" });
     } else {
-      //campos vacíos
+      const admitido = await encuentraCliente(input.mail, input.password);
+      if (admitido) {
+        setGoToCitas(true);
+      } else {
+        setError({
+          incognita: true,
+          mensaje: "Nombre o Contraseña incorrectas",
+        });
+      }
     }
   };
 
@@ -23,9 +35,11 @@ const Log = () => {
     return true;
   }
 
+  if (goToCitas) return <Navigate to="/" />;
+
   return (
     <div>
-      <form className={style.formulario}>
+      <div className={style.formulario}>
         <h1>Login</h1>
         <div className={style.contenedor}>
           <div className={style.inputContenedor}>
@@ -52,6 +66,13 @@ const Log = () => {
               onClick={handleLogin}
             />
           </div>
+          <p
+            className={`${
+              error.incognita ? `${style.red}` : `${style.hidden}`
+            } `}
+          >
+            {error.mensaje}
+          </p>
           <p>
             Al registrarte, aceptas nuestras Condiciones de uso y Política de
             privacidad.
@@ -63,7 +84,7 @@ const Log = () => {
             </a>
           </p>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

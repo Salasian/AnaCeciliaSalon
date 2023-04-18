@@ -1,0 +1,68 @@
+hr {
+  border: none;
+  border-top: 1px solid #999;
+}
+
+h1 {
+  text-align: center;
+}
+
+.services {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.container {
+  width: 100%;
+  padding: 15px;
+}
+
+.button {
+  border: none;
+  width: fit-content;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff5722;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-crear {
+  border: none;
+  width: fit-content;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff5722;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ff9a3c;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.row input[type="text"] {
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+}
+
+.description {
+  height: 150px;
+}
+
+.btn-services {
+  margin: 0px 10px 0px 10px;
+}
