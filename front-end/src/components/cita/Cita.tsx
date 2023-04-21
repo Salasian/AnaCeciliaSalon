@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Navigate } from "react-router-dom";
 import { useCitasContext } from "../../context/citasContext";
 import style from "./cita.module.css";
+import { useSevicioContext } from "../../context/servicioContext";
+import Autocomplete from "@mui/material/Autocomplete";
+import { TextField } from "@mui/material";
 
 function Cita() {
+  const { servicios, fetchServicios } = useSevicioContext();
   const [goToCitas, setGoToCitas] = useState(false);
   const { agregarCita } = useCitasContext();
   const [vacio, setVacio] = useState({
@@ -13,11 +17,24 @@ function Cita() {
     mensaje: "Hay campos vacíos",
   });
   const [fechaError, setFechaError] = useState({ estado: false, mensaje: "" });
-  const [input, setInput] = useState({
+  interface IInput {
+    telefono: string;
+    hora: string;
+    fecha: any;
+    precio: string;
+    cliente: string;
+    servicio1: string | null;
+    servicio2: string | null;
+    servicio3: string | null;
+    precio1: number;
+    precio2: number;
+    precio3: number;
+  }
+  const [input, setInput] = useState<IInput>({
     telefono: "",
     hora: "",
     fecha: new Date(),
-    precio: 0,
+    precio: "",
     cliente: "Ian Salas López",
     servicio1: "",
     servicio2: "",
@@ -33,11 +50,13 @@ function Cita() {
     return <Navigate to="/citas" />;
   }
 
-  let handleColor = (time) => {
+  fetchServicios();
+
+  let handleColor = (time: Date) => {
     return time.getHours() > 9 ? "text-success" : "text-error";
   };
 
-  function handleChange(event) {
+  function handleChange(event: any) {
     const { name, value } = event.target;
 
     setInput((prevInput) => {
@@ -96,7 +115,7 @@ function Cita() {
       }
       //Dar el total por todos los servicios solicitados
       const precio = 0;
-      var servicios = [];
+      var servicios: Array<{}> = [];
       if (input.servicio1 && input.precio1) {
         servicios.push({ servicio: input.servicio1, precio: input.precio1 });
         if (input.servicio2 && input.precio2)
@@ -125,9 +144,7 @@ function Cita() {
         <div className={`col ${style.precioBg}`}>
           <div className={style.precio}>
             <h3>Precio</h3>
-            <h1 onChange={handleChange} name="precio" value={input.precio}>
-              $0.00
-            </h1>
+            <h1>${input.precio}</h1>
             <p className={style.sub}>Pesos</p>
             <p style={{ color: "#999", fontSize: 25 }}>
               precio estimado del servicio
@@ -189,30 +206,36 @@ function Cita() {
                 )}
               </h5>
               <div className={style.inputContainer}>
-                <input
-                  type="text"
-                  name="servicio1"
-                  value={input.servicio1}
-                  onChange={handleChange}
-                  className="border"
+                <Autocomplete
+                  options={servicios.map((servicio) => servicio.nombre)}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Servicio" />
+                  )}
+                  onChange={(event, value: string | null, reason, details) =>
+                    setInput({ ...input, servicio1: value })
+                  }
                 />
               </div>
               <div className={style.inputContainer}>
-                <input
-                  type="text"
-                  name="servicio2"
-                  value={input.servicio2}
-                  onChange={handleChange}
-                  className="border"
+                <Autocomplete
+                  options={servicios.map((servicio) => servicio.nombre)}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Servicio" />
+                  )}
+                  onChange={(event, value: string | null, reason, details) =>
+                    setInput({ ...input, servicio2: value })
+                  }
                 />
               </div>
               <div className={style.inputContainer}>
-                <input
-                  type="text"
-                  name="servicio3"
-                  value={input.servicio3}
-                  onChange={handleChange}
-                  className="border"
+                <Autocomplete
+                  options={servicios.map((servicio) => servicio.nombre)}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Servicio" />
+                  )}
+                  onChange={(event, value: string | null, reason, details) =>
+                    setInput({ ...input, servicio3: value })
+                  }
                 />
               </div>
             </div>

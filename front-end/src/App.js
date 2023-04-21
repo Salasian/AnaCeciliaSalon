@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Cita from "./components/cita/Cita";
+import Cita from "./components/cita/Cita.tsx";
 import Citas from "./components/citas/Citas";
 import EditarCita from "./components/editarCita/EditarCita";
 import Log from "./components/log&Sign/Log";
@@ -15,8 +15,22 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/citas" element={<Citas />} />
-        <Route path="/citas/cita" element={<Cita />} />
+        <Route
+          path="/citas"
+          element={
+            <ServicioContext>
+              <Citas />
+            </ServicioContext>
+          }
+        />
+        <Route
+          path="/citas/cita"
+          element={
+            <ServicioContext>
+              <Cita />
+            </ServicioContext>
+          }
+        />
         <Route path="/citas/editar" element={<EditarCita />} />
 
         <Route

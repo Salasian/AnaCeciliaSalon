@@ -79,7 +79,7 @@ const Log = () => {
           </p>
           <p>
             ¿No tienes una cuenta?{" "}
-            <a className={style.link} href="registrarvista.html">
+            <a className={style.link} href="/signin">
               Registrate
             </a>
           </p>
