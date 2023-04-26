@@ -33,7 +33,7 @@ const Servicios = () => {
   }
 
   function handleEditar(id) {
-    let link = `/servicio/editar`;
+    let link = `/servicios/editar`;
     navigate(link, { state: { id: id } });
   }
 
@@ -108,7 +108,7 @@ const Servicios = () => {
                 <div className="d-flex">
                   <button
                     className={` button flex-fill ${style.button} ${style.btnServices}`}
-                    onClick={handleEditar}
+                    onClick={() => handleEditar(_id)}
                   >
                     Modificar servicio
                   </button>

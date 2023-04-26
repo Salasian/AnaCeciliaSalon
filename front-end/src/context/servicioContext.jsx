@@ -29,7 +29,9 @@ const AppContext = ({ children }) => {
     await axios.delete(`http://localhost:3001/servicio/${id}`);
   };
 
-  const editarServicio = async (id, editedServicio) => {};
+  const editarServicio = async (id, editedServicio) => {
+    await axios.patch(`http://localhost:3001/servicio/${id}`, editedServicio);
+  };
 
   return (
     <ServiciosContext.Provider

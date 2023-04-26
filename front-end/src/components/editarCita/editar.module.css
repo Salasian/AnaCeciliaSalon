@@ -33,3 +33,7 @@ input {
 textarea {
   height: 2.5rem;
 }
+
+.rojo {
+  color: red;
+}

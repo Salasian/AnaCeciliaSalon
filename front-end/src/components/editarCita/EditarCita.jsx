@@ -36,6 +36,7 @@ const EditarCita = () => {
 
   function isVacios() {
     const { telefono, cliente, fecha } = input;
+    console.log(telefono, cliente, fecha);
     if (telefono && cliente && fecha) {
       setVacio({ estado: false, mensaje: "" });
       return false;
@@ -101,8 +102,9 @@ const EditarCita = () => {
   function handleClick(event) {
     event.preventDefault();
     input.fecha = startDate;
-    if (isAtrasada(input.fecha)) {
-    } else if (!isVacios()) {
+    const atrasada = isAtrasada(input.fecha);
+    const vacios = isVacios();
+    if (!atrasada && !vacios) {
       const hora = `${input.fecha.getHours()}:${input.fecha.getMinutes()}`;
       //Dar el total por todos los servicios solicitados
       const precio = 0;
@@ -131,12 +133,12 @@ const EditarCita = () => {
   return (
     <div className="container">
       <section className={style.crud}>
+        {vacio.estado === true ? (
+          <p className={`${style.rojo} text-center`}> {vacio.mensaje}</p>
+        ) : (
+          <i></i>
+        )}
         <ul className={` d-flex justify-content-center ${style.crudList}`}>
-          {vacio.estado === true ? (
-            <i className="rojo"> {vacio.mensaje}</i>
-          ) : (
-            <i></i>
-          )}
           <li>
             <h4>Cliente</h4>
             <input
@@ -165,7 +167,10 @@ const EditarCita = () => {
           <li>
             <h4>Fecha</h4>
             {fechaError.estado === true ? (
-              <i className="rojo"> {fechaError.mensaje}</i>
+              <p className={`${style.rojo} text-center`}>
+                {" "}
+                {fechaError.mensaje}
+              </p>
             ) : (
               <i></i>
             )}

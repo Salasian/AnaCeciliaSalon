@@ -53,9 +53,9 @@ router.route("/:id").patch(async (req, res) => {
 
 router.route("/:id").get(async (req, res) => {
   const id = req.params.id;
-
   try {
-    let servicio = await Servicio.find(id);
+    let servicio = await Servicio.findById(id);
+    res.json(servicio);
     console.log(servicio);
   } catch (error) {
     console.log(error);

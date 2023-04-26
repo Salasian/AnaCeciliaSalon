@@ -9,6 +9,7 @@ import Signin from "./components/log&Sign/Signin";
 import Servicios from "./components/servicios/Servicios";
 import { default as ServicioContext } from "./context/servicioContext";
 import { default as ClienteContext } from "./context/clienteContext";
+import EditarServicios from "./components/editarservicios/EditarServicios";
 
 function App() {
   return (
@@ -38,6 +39,15 @@ function App() {
           element={
             <ServicioContext>
               <Servicios />
+            </ServicioContext>
+          }
+        />
+
+        <Route
+          path="/servicios/editar"
+          element={
+            <ServicioContext>
+              <EditarServicios />
             </ServicioContext>
           }
         />
