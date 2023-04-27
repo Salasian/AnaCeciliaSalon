@@ -10,6 +10,8 @@ import Servicios from "./components/servicios/Servicios";
 import { default as ServicioContext } from "./context/servicioContext";
 import { default as ClienteContext } from "./context/clienteContext";
 import EditarServicios from "./components/editarservicios/EditarServicios";
+import Clientes from "./components/clientes/Clientes";
+import EditarCliente from "./components/editarcliente/EditarCliente";
 
 function App() {
   return (
@@ -49,6 +51,22 @@ function App() {
             <ServicioContext>
               <EditarServicios />
             </ServicioContext>
+          }
+        />
+        <Route
+          path="/clientes"
+          element={
+            <ClienteContext>
+              <Clientes />
+            </ClienteContext>
+          }
+        />
+        <Route
+          path="/clientes/editar"
+          element={
+            <ClienteContext>
+              <EditarCliente />
+            </ClienteContext>
           }
         />
 

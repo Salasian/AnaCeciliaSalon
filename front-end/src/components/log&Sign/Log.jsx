@@ -17,6 +17,7 @@ const Log = () => {
       setError({ incognita: true, mensaje: "Hay campos vacíos" });
     } else {
       const admitido = await encuentraCliente(input.mail, input.password);
+      console.log(admitido);
       if (admitido) {
         setGoToCitas(true);
       } else {

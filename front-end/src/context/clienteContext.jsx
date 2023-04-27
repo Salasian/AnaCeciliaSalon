@@ -17,7 +17,7 @@ const AppContext = ({ children }) => {
   const fetchClientes = async () => {
     try {
       let clientela = await axios.get("http://localhost:3001/cliente");
-      setClientes(clientela);
+      setClientes(clientela.data);
     } catch (error) {
       console.log(error);
     }
@@ -30,6 +30,21 @@ const AppContext = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const borrarCliente = async (id) => {
+    try {
+      const borrado = await axios.delete(`http://localhost:3001/cliente/${id}`);
+      if (borrado.status === 200) return true;
+      return false;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+
+  const editarCliente = async (id, editedCliente) => {
+    await axios.patch(`http://localhost:3001/cliente/${id}`, editedCliente);
   };
 
   const encuentraCliente = async (mail, password) => {
@@ -48,7 +63,14 @@ const AppContext = ({ children }) => {
 
   return (
     <ClientesContext.Provider
-      value={{ clientes, agregarClientes, encuentraCliente }}
+      value={{
+        clientes,
+        fetchClientes,
+        agregarClientes,
+        encuentraCliente,
+        borrarCliente,
+        editarCliente,
+      }}
     >
       {children}
     </ClientesContext.Provider>

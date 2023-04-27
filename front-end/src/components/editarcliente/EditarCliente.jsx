@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from "react";
-import style from "./editarservicios.module.css";
-import { useSevicioContext } from "../../context/servicioContext";
 import { Navigate, useLocation } from "react-router-dom";
+import { useClienteContext } from "../../context/clienteContext";
+import style from "./editarcliente.module.css";
 
-const EditarServicios = () => {
+const EditarCliente = () => {
   const location = useLocation();
   let id = location.state.id;
   const [input, setInput] = useState({
     nombre: "",
-    costo: 10,
-    descripcion: "",
+    password: "",
+    mail: "",
   });
-  const { editarServicio } = useSevicioContext();
-  const [goToServicios, setGoToServicios] = useState(false);
+  const { editarCliente } = useClienteContext();
+  const [goToClientes, setGoToClientes] = useState(false);
   const [vacio, setVacio] = useState({
     estado: false,
     mensaje: "Hay campos vacíos",
   });
 
   function isVacios() {
-    const { nombre, costo, descripcion } = input;
-    if (nombre && costo && descripcion) {
+    const { nombre, mail, password } = input;
+    console.log(nombre, mail, password);
+    if (nombre && mail && password) {
       setVacio({ estado: false, mensaje: "" });
       return false;
     }
@@ -30,14 +31,13 @@ const EditarServicios = () => {
 
   async function handleClick() {
     if (!isVacios()) {
-      console.log("editado");
-      editarServicio(id, input);
-      setGoToServicios(true);
+      editarCliente(id, input);
+      setGoToClientes(true);
     }
   }
 
   useEffect(() => {
-    fetch(`http://localhost:3001/servicio/${id}`)
+    fetch(`http://localhost:3001/cliente/find/${id}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -49,7 +49,7 @@ const EditarServicios = () => {
       });
   }, []);
 
-  if (goToServicios) return <Navigate to="/servicios" />;
+  if (goToClientes) return <Navigate to="/clientes" />;
 
   return (
     <div className="container">
@@ -73,26 +73,24 @@ const EditarServicios = () => {
             />
           </li>
           <li className="m-5">
-            <h4>Descripción</h4>
+            <h4>Mail</h4>
             <input
-              name="descripcion"
-              value={input.descripcion}
-              onChange={(e) =>
-                setInput({ ...input, descripcion: e.target.value })
-              }
+              name="mail"
+              value={input.mail}
+              onChange={(e) => setInput({ ...input, mail: e.target.value })}
               autoComplete="off"
               className="form-control"
               placeholder="Descripción"
             />
           </li>
           <li className="m-5">
-            <h4>Precio</h4>
+            <h4>Password</h4>
             <input
               type="text"
-              placeholder="Costo"
-              className={style.inputContainer}
-              value={input.costo}
-              onChange={(e) => setInput({ ...input, costo: e.target.value })}
+              placeholder="password"
+              className="form-control"
+              value={input.password}
+              onChange={(e) => setInput({ ...input, password: e.target.value })}
             />
           </li>
         </ul>
@@ -110,4 +108,4 @@ const EditarServicios = () => {
   );
 };
 
-export default EditarServicios;
+export default EditarCliente;

@@ -6,7 +6,7 @@ router.route("/").get((req, res) => {
   Cliente.find().then((foundedClientes) => res.json(foundedClientes));
 });
 
-/*router.route("/:id").get(async (req, res) => {
+router.route("/find/:id").get(async (req, res) => {
   const id = req.params.id;
   try {
     let cliente = await Cliente.findById(id);
@@ -14,18 +14,21 @@ router.route("/").get((req, res) => {
   } catch (error) {
     console.log(error);
   }
-});*/
+});
 
 router.route("/loger").get(async (req, res) => {
+  console.log("entró a logger");
   const mail = req.query.mail;
   const password = req.query.password;
+  console.log(req.query);
   try {
     let cliente = await Cliente.find({
       mail: mail,
       password: password,
     });
-    console.log(cliente);
+
     if (cliente.length > 0) {
+      console.log(cliente);
       res.status(200).json({ message: "Admitido", status: 200 });
     } else {
       res.status(404).send("Not found");
@@ -47,18 +50,18 @@ router.route("/:id").delete(async (req, res) => {
   const id = req.params.id;
   try {
     const borrado = await Cliente.findByIdAndDelete(id);
+    console.log(id, borrado);
     res.json(borrado);
   } catch (error) {
     console.log(error);
   }
 });
 
-router.route("/:id").patch((req, res) => {
+router.route("/:id").patch(async (req, res) => {
   const id = req.params.id;
   const { nombre, mail, password } = req.body;
-
   try {
-    Cliente.findByIdAndUpdate(
+    let cliente = await Cliente.findByIdAndUpdate(
       { _id: id },
       {
         $set: {
@@ -68,6 +71,7 @@ router.route("/:id").patch((req, res) => {
         },
       }
     );
+    console.log(cliente);
   } catch (error) {
     console.log(error);
   }
