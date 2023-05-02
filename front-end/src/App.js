@@ -12,12 +12,22 @@ import { default as ClienteContext } from "./context/clienteContext";
 import EditarServicios from "./components/editarservicios/EditarServicios";
 import Clientes from "./components/clientes/Clientes";
 import EditarCliente from "./components/editarcliente/EditarCliente";
+import Inicio from "./components/inicio/Inicio";
+import Productos from "./components/productos/Productos";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
+        <Route
+          path="/"
+          element={
+            <Inicio>
+
+            </Inicio>
+          }
+        />
         <Route
           path="/citas"
           element={
@@ -36,6 +46,12 @@ function App() {
         />
         <Route path="/citas/editar" element={<EditarCita />} />
 
+        <Route
+          path="/productos"
+          element={
+              <Productos />
+          }
+        />
         <Route
           path="/servicios"
           element={

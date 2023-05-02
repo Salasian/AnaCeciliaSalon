@@ -1,0 +1,53 @@
+.sesion {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border: solid 5px #ececec;
+}
+
+.columna h1 {
+    font-weight: 590;
+    text-align: left;
+    line-height: 130%;
+}
+
+.columna p {
+    line-height: 160%;
+}
+
+.muestras img {
+    width: 150px;
+}
+
+.muestras li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.sesion button {
+    border: none;
+    width: fit-content;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: #ff5722;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sesion button:hover {
+    background: #ff9a3c;
+}
+
+.descubre {
+    color: #ff5722;
+    font-weight: 400;
+}
