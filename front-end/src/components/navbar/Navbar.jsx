@@ -36,6 +36,11 @@ function Navbar() {
               </Link>
             </li>
             <li>
+              <Link to="/productos" className={style.link}>
+                Productos
+              </Link>
+            </li>
+            <li>
               <Link to="/signin" className={`btn ${style.naranja}`}>
                 Sign in
               </Link>
