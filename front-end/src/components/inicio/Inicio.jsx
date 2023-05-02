@@ -10,15 +10,15 @@ export const Inicio = () => {
           <p>Ana Cecilia Salon es un salon de belleza que preocupa todos sus servicios hacias sus clientes seaon de la mejor calidad y la mejor experiencia, entre los servicios se ofrecen:</p>
           <ul  className={`${style.muestras}`}>
             <li>
-              <img src="/cortes.jpg" />
+              <img style={{width: '100%'}} src="/cortes.jpg" />
               <p>Cortes y peinados</p>
             </li>
             <li>
-            <img src="/maquillaje.jpg" />
+            <img style={{width: '120%', height: '215px'}} src="/maquillaje.jpg" />
               <p>Maquillajes</p>
             </li>
             <li>
-            <img src="/tratamiento.jpg" />
+            <img style={{width: '210%'}} src="/tratamiento.jpg" />
               <p>Tratamientos capilares y más</p>
             </li>
           </ul>
@@ -26,6 +26,9 @@ export const Inicio = () => {
         <div className='col-sm-6'>
           <div className={`${style.sesion}`}>
             <button>Registrate</button>
+            <div style={{width: '100%', height: '5px'}}>
+              <hr style={{border: 'none', borderTop: '1px solid #999'}} />
+            </div> 
             <button>Iniciar Sesion</button>
           </div>
           <div className={`${style.descubre}`}>
