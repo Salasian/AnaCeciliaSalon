@@ -5,9 +5,29 @@ export const Productos = () => {
   return (
     <div className={style.productGrid}>
       <div className={style.productItem}>
-        <img src="product-1.jpg" alt="Product 1" />
-        <h3>Product 1</h3>
-        <p>$19.99</p>
+        <img src="product-1.jpg" alt="imagen" />
+        <h3>Titulo</h3>
+        <p>Descripción</p>
+      </div>
+      <div className={style.productItem}>
+        <img src="product-1.jpg" alt="imagen" />
+        <h3>Titulo</h3>
+        <p>Descripción</p>
+      </div>
+      <div className={style.productItem}>
+        <img src="product-1.jpg" alt="imagen" />
+        <h3>Titulo</h3>
+        <p>Descripción</p>
+      </div>
+      <div className={style.productItem}>
+        <img src="product-1.jpg" alt="imagen" />
+        <h3>Titulo</h3>
+        <p>Descripción</p>
+      </div>
+      <div className={style.productItem}>
+        <img src="product-1.jpg" alt="imagen" />
+        <h3>Titulo</h3>
+        <p>Descripción</p>
       </div>
     </div>
   );

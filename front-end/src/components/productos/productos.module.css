@@ -9,6 +9,7 @@
 .productItem {
   background-color: #fff;
   padding: 20px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
