@@ -1,59 +1,85 @@
 .columna h1 {
-    font-weight: 590;
-    text-align: left;
-    line-height: 130%;
+  font-weight: 590;
+  text-align: left;
+  line-height: 130%;
 }
 
 .columna p {
-    line-height: 160%;
+  line-height: 160%;
 }
 
 .muestras {
-    right: 10%;
+  width: 100%;
 }
 
 .muestras li {
-    display: inline-block;
-    text-align: center;
-    width: 32%;
-    vertical-align: top;
-    padding: 30px 20px;
+  display: inline-block;
+  padding: 10px 5px;
+}
+
+.muestras li img {
+  width: auto;
+  height: 13rem;
 }
 
 .sesion {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 20%;
-    height: 25%;
-    left: 65%;
-    border-radius: 24px;
-    align-items: center;
-    background: #fff;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    padding: 10px;
+  margin-top: 2rem;
+  border-radius: 24px;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
 }
 
 .sesion button {
-    border: none;
-    width: fit-content;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: #ff5722;
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff5722;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .sesion button:hover {
-    background: #ff9a3c;
+  background: #ff9a3c;
+}
+
+.sesion h4 {
+  font-weight: bold;
+}
+
+.sesion p {
+  color: #888;
 }
 
 .descubre {
-    position: absolute;
-    right: 20%;
-    top: 42%;
-    color: #ff5722;
-    font-weight: 400;
+  height: 1rem;
+  width: 100%;
+  color: #ff5722;
+  font-weight: 400;
+}
+
+button {
+  margin: 0;
+}
+
+.separator {
+  height: 0.15rem;
+  background-color: #888;
+  margin: 1rem 0rem;
+}
+
+.menuContainer {
+  margin-left: 3%;
+}
+
+.sesionText {
+  background-color: #fff;
+}
+.separatorBox {
+  margin: 1rem 0rem;
+  width: 100%;
 }
