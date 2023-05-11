@@ -33,6 +33,7 @@ const EditarCliente = () => {
     if (!isVacios()) {
       editarCliente(id, input);
       setGoToClientes(true);
+      setVacio(false);
     }
   }
 
