@@ -94,7 +94,7 @@ export const Productos = () => {
           <input
             type="file"
             accept="image/*"
-            className={style.input}
+            className={style.fileInput}
             onChange={(e) => convert64(e)}
           />
         </div>

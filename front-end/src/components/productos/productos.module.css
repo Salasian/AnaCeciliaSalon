@@ -39,3 +39,9 @@
 .rojo {
   color: red;
 }
+
+.fileInput {
+  background-color: #8888882a;
+  height: 3.5rem;
+  width: fit-content;
+}
